@@ -1,13 +1,17 @@
+// config/middlewares.js
 module.exports = [
   'strapi::errors',
+  'strapi::security',
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:3000', 'https://knotless-blog.netlify.app/'],
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+      enabled: true,
+      origin: ['https://knotless-blog.netlify.app'], // Your Netlify domain
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       keepHeaderOnError: true,
-    }
+      credentials: true,
+    },
   },
   'strapi::poweredBy',
   'strapi::logger',
@@ -16,5 +20,4 @@ module.exports = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-  'strapi::security',
 ];
