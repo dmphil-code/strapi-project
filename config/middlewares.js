@@ -6,7 +6,7 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['https://knotless-blog.netlify.app', 'http://localhost:3000'], // Add your local development server
+      origin: ['https://knotless-blog.netlify.app', 'http://localhost:3000','https://knotless.bookerhq.ca','https://knotless-v0-veltcr.flutterflow.app/'], // Add your local development server
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       keepHeaderOnError: true,
