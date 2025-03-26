@@ -52,6 +52,12 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "affiliates": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::affiliate.affiliate",
+      "mappedBy": "articles"
     }
   }
 }
