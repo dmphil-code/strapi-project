@@ -31,12 +31,17 @@
       "mappedBy": "brand"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "url": {
+      "type": "string",
+      "unique": true
     }
   }
 }
