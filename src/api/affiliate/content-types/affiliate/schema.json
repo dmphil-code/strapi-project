@@ -45,6 +45,18 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "affiliates"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "promotion": {
+      "type": "boolean"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "affiliates"
     }
   }
 }
