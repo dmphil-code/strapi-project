@@ -37,9 +37,6 @@
       "target": "api::category.category",
       "inversedBy": "affiliates"
     },
-    "company": {
-      "type": "string"
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
@@ -57,6 +54,20 @@
       "relation": "manyToOne",
       "target": "api::brand.brand",
       "inversedBy": "affiliates"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Coupon",
+        "Product"
+      ]
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
