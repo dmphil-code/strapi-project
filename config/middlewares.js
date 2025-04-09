@@ -1,12 +1,23 @@
 // config/middlewares.js
 module.exports = [
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'img-src': ["'self'", 'data:', 'blob:', 'https://market-assets.strapi.io', 'https://res.cloudinary.com'],
+          'media-src': ["'self'", 'data:', 'blob:', 'https://market-assets.strapi.io', 'https://res.cloudinary.com'],
+        },
+      },
+    },
+  },
   {
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['https://knotless-blog.netlify.app', 'http://localhost:3000','https://knotless.bookerhq.ca','https://knotless-v0-veltcr.flutterflow.app/'], // Add your local development server
+      origin: ['https://knotless-blog.netlify.app', 'http://localhost:3000', 'https://knotless.bookerhq.ca', 'https://knotless-v0-veltcr.flutterflow.app/'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       keepHeaderOnError: true,
