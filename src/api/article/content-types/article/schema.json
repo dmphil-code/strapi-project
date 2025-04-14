@@ -49,17 +49,13 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
-    "content": {
-      "type": "richtext",
-      "required": true
-    },
     "affiliates": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::affiliate.affiliate",
       "mappedBy": "articles"
     },
-    "content1": {
+    "content": {
       "type": "blocks"
     }
   }
