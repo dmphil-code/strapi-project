@@ -42,6 +42,9 @@
     "url": {
       "type": "string",
       "unique": true
+    },
+    "featured": {
+      "type": "boolean"
     }
   }
 }
